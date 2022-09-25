@@ -90,8 +90,12 @@ dependencies {
 
     // Coil
     implementation "io.coil-kt:coil-compose:2.2.1"
+
     // Palette
     implementation 'androidx.palette:palette:1.0.0'
+
+    // Timber Logger
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 
     // Junit
     testImplementation 'junit:junit:4.13.2'
