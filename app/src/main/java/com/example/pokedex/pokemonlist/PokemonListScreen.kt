@@ -39,7 +39,8 @@ fun PokemonListScreen(
                 hint = "Search...",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp)
+                    .padding(16.dp),
+                viewModel = viewModel
             ) {
                 viewModel.searchForPokemon(it)
             }

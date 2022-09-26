@@ -33,6 +33,7 @@ class PokemonListViewModel @Inject constructor(
 
     private var cachedPokemonList = listOf<PokedexListEntry>()
     private var isSearchStarting = true
+    val searchText = mutableStateOf("")
     val isSearching = mutableStateOf(false)
 
     init {
@@ -70,7 +71,6 @@ class PokemonListViewModel @Inject constructor(
                     isLoading.value = false
                 }
             }
-            Timber.d("Result : ${result.toString()}")
         }
     }
 

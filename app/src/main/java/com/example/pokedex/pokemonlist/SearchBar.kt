@@ -19,10 +19,11 @@ import androidx.compose.ui.unit.dp
 fun SearchBar(
     modifier: Modifier = Modifier,
     hint: String = "",
+    viewModel: PokemonListViewModel,
     onSearch: (String) -> Unit = {}
 ) {
     var searchText by remember {
-        mutableStateOf("")
+        viewModel.searchText
     }
     var isHintDisplayed by remember {
         mutableStateOf(hint != "")
@@ -43,7 +44,7 @@ fun SearchBar(
                 .background(Color.White)
                 .padding(horizontal = 20.dp, vertical = 12.dp)
                 .onFocusChanged {
-                    isHintDisplayed = !it.isFocused
+                    isHintDisplayed = !it.isFocused && searchText.isBlank()
                 }
         )
         if (isHintDisplayed) {
