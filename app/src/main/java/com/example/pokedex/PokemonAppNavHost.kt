@@ -8,6 +8,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.pokedex.pokemonlist.PokemonListScreen
 
 @Composable
 fun PokemonAppNavHost(navController: NavHostController) {
@@ -16,7 +17,7 @@ fun PokemonAppNavHost(navController: NavHostController) {
         startDestination = "pokemon_list_screen"
     ) {
         composable("pokemon_list_screen") {
-            // TODO: call the screen composable
+            PokemonListScreen(navController = navController)
         }
         composable(
             "pokemon_detail_screen/{pokemonName}/{dominantColor}",

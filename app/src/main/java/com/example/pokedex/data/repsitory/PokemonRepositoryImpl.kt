@@ -4,8 +4,11 @@ import com.example.pokedex.data.remote.PokeApi
 import com.example.pokedex.data.remote.responses.Pokemon
 import com.example.pokedex.data.remote.responses.PokemonList
 import com.example.pokedex.util.Resource
+import javax.inject.Inject
 
-class PokemonRepositoryImpl(private val pokeApi: PokeApi) : PokemonRepository {
+class PokemonRepositoryImpl @Inject constructor(
+    private val pokeApi: PokeApi
+) : PokemonRepository {
 
     override suspend fun getPokemonList(limit: Int, offset: Int): Resource<PokemonList> {
         val response = try {
